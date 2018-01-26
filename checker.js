@@ -9,9 +9,17 @@ function check(url, invocationParameters,  expectedResultData, expectedResultSta
         resultStatus: null,
         statusTestPassed: null,
         resultDataAsExpected: null
-    }
+    };
 
+    var latoa=invocationParameters.lato1;
+    var latob=invocationParameters.lato2;
 
+    var urlToCheck=checkResult.urlChecked+'?lato1='+latoa+'&lato2='+latob;
+
+    return fetch(urlToCheck)
+        .then(function(res) {
+            console.log(res.json);
+        });
 
 }
 
